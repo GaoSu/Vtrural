@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="VLXiPersonImageCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="94"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="93"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="头像" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3W1-sW-c3u">
+                        <rect key="frame" x="12" y="37" width="33" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.26666666666666666" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jump" translatesAutoresizingMaskIntoConstraints="NO" id="TMn-Eq-IWg">
+                        <rect key="frame" x="298" y="41" width="7" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="7" id="1Uc-sz-k5y"/>
+                            <constraint firstAttribute="height" constant="12" id="9AW-Dr-bUA"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="personImage" image="faguo" translatesAutoresizingMaskIntoConstraints="NO" id="89R-uA-Wex">
+                        <rect key="frame" x="224" y="15" width="64" height="64"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="64" id="8Hw-TD-fKz"/>
+                            <constraint firstAttribute="width" constant="64" id="emd-0P-sQO"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="32"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Eq-F2-RuY">
+                        <rect key="frame" x="12" y="92" width="308" height="1"/>
+                        <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="3NC-Ga-XZt"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="TMn-Eq-IWg" secondAttribute="trailing" constant="15.5" id="1HP-PO-Bkv"/>
+                    <constraint firstItem="TMn-Eq-IWg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="A3I-Kr-BVR"/>
+                    <constraint firstAttribute="bottom" secondItem="1Eq-F2-RuY" secondAttribute="bottom" id="Aqy-GS-1Wg"/>
+                    <constraint firstItem="1Eq-F2-RuY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="Kqf-0s-sg8"/>
+                    <constraint firstItem="3W1-sW-c3u" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="e0B-wg-O2h"/>
+                    <constraint firstItem="3W1-sW-c3u" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="fAv-CZ-u9E"/>
+                    <constraint firstItem="TMn-Eq-IWg" firstAttribute="leading" secondItem="89R-uA-Wex" secondAttribute="trailing" constant="10" id="iHb-5u-DXr"/>
+                    <constraint firstItem="89R-uA-Wex" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="lzl-mx-ZVp"/>
+                    <constraint firstAttribute="trailing" secondItem="1Eq-F2-RuY" secondAttribute="trailing" id="yho-1J-Q8N"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="userImageview" destination="89R-uA-Wex" id="ff1-nb-21T"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="faguo" width="80" height="80"/>
+        <image name="jump" width="9" height="15"/>
+    </resources>
+</document>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="VLXFarmYardDetailCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="52"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="51"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3p1-G7-ZEF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="place" translatesAutoresizingMaskIntoConstraints="NO" id="jPw-C2-l86">
+                                <rect key="frame" x="12" y="14.5" width="11" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="LC0-8z-Jmq"/>
+                                    <constraint firstAttribute="width" constant="11" id="uIO-oS-pzE"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="北京怀柔区红螺寺路5号院" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBl-eQ-I5V">
+                                <rect key="frame" x="41" y="12" width="183.5" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="0J1-St-J5c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jump" translatesAutoresizingMaskIntoConstraints="NO" id="qYl-Cq-gqA">
+                                <rect key="frame" x="296" y="12" width="12" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="12" id="Usy-Gz-dlH"/>
+                                    <constraint firstAttribute="height" constant="20" id="gYG-7p-FCl"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="820km" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNq-CU-RF6">
+                                <rect key="frame" x="229.5" y="12" width="55" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="ABP-yh-C2u"/>
+                                    <constraint firstAttribute="width" constant="55" id="FEj-cQ-ykL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="43.5" id="1e8-yc-T5d"/>
+                            <constraint firstAttribute="trailing" secondItem="qYl-Cq-gqA" secondAttribute="trailing" constant="12" id="E94-th-qsc"/>
+                            <constraint firstItem="VNq-CU-RF6" firstAttribute="top" secondItem="WBl-eQ-I5V" secondAttribute="top" id="F0B-jf-dbj"/>
+                            <constraint firstItem="qYl-Cq-gqA" firstAttribute="top" secondItem="3p1-G7-ZEF" secondAttribute="top" constant="12" id="I7T-qb-dbp"/>
+                            <constraint firstItem="VNq-CU-RF6" firstAttribute="leading" secondItem="WBl-eQ-I5V" secondAttribute="trailing" constant="5" id="Nrr-yR-ZQy"/>
+                            <constraint firstItem="WBl-eQ-I5V" firstAttribute="leading" secondItem="jPw-C2-l86" secondAttribute="trailing" constant="18" id="cHx-Bd-g5i"/>
+                            <constraint firstItem="jPw-C2-l86" firstAttribute="leading" secondItem="3p1-G7-ZEF" secondAttribute="leading" constant="12" id="cIR-kF-uOQ"/>
+                            <constraint firstItem="WBl-eQ-I5V" firstAttribute="top" secondItem="3p1-G7-ZEF" secondAttribute="top" constant="12" id="fzj-G4-aqc"/>
+                            <constraint firstItem="jPw-C2-l86" firstAttribute="top" secondItem="3p1-G7-ZEF" secondAttribute="top" constant="14.5" id="gZc-QL-cSN"/>
+                            <constraint firstItem="qYl-Cq-gqA" firstAttribute="leading" secondItem="VNq-CU-RF6" secondAttribute="trailing" constant="11.5" id="tZc-u4-UGn"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="3p1-G7-ZEF" secondAttribute="bottom" constant="8" id="kuI-xn-LOd"/>
+                    <constraint firstItem="3p1-G7-ZEF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="l3Q-tD-wZv"/>
+                    <constraint firstItem="3p1-G7-ZEF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="lr3-7O-uxS"/>
+                    <constraint firstAttribute="trailing" secondItem="3p1-G7-ZEF" secondAttribute="trailing" id="qcT-B1-p3Z"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="addressLab" destination="WBl-eQ-I5V" id="rZS-58-ncD"/>
+                <outlet property="distanceLab" destination="VNq-CU-RF6" id="8eB-RR-Osm"/>
+            </connections>
+            <point key="canvasLocation" x="-143" y="-31"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="jump" width="9" height="15"/>
+        <image name="place" width="11" height="15"/>
+    </resources>
+</document>

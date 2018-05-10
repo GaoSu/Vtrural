@@ -1,0 +1,374 @@
+//
+//  PrefixHeader.pch
+//  BaseProject
+//
+//  Created by RWN on 17/5/2.
+//  Copyright © 2017年 RWN. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */
+
+#ifdef __OBJC__
+
+#import "UIButton+ImageTitleSpacing.h"
+#import "TitleButtonNoDataView.h"
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "UIView+SDAutoLayout.h"
+#import "MJRefresh.h"
+#import "MJExtension.h"
+#import "SVProgressHUD.h"
+#import "AFNetworking.h"
+#import "SDWebImageManager.h"
+#import "UIImageView+WebCache.h"
+#import "SPHttpWithYYCache.h"
+#import "NSString+UserDefault.h"
+#import "YBImgPickerViewCell.h"
+#import "YBImgPickerViewController.h"
+#import "YBPreImgViewController.h"
+#import "YBPreViewImgViewCell.h"
+#import "UIButton+WebCache.h"
+#import "UploadImageTool.h"
+#import "Masonry.h"
+#import "MASConstraint.h"
+#import "CYLTabBarControllerConfig.h"
+#import "SDCycleScrollView.h"
+#import "CYLPlusButtonSubclass.h"
+#import "LeftButton.h"
+#import "LeftButtonItem.h"
+#import "RightButton.h"
+#import "UIImage+Tool.h"
+#import "NSString+WigthAndHeight.h"
+#import "UIColor+hexStringToColor.h"
+#import "NSString+Tool.h"
+#import "NotificationView.h"
+#import "CCLocationManager.h"
+#import "CLLocation+YCLocation.h"
+#import "Reachability.h"//网络判断
+#import "WXApi.h"//微信
+#import <UserNotifications/UserNotifications.h>//推送
+#import <BaiduMapAPI_Base/BMKMapManager.h>
+#import <UMSocialCore/UMSocialCore.h>
+#import "UMessage.h"
+#import <AlipaySDK/AlipaySDK.h>
+//#import "HDLeadController.h"
+#import "FSCalendar.h"
+#import <AVFoundation/AVFoundation.h>
+#import "ReturnBarButtonItem.h"
+#import "JFCompressionVideo.h"
+#import "ZYYCustomTool.h"
+#import "NSDate+Tool.h"
+#import "NSDate+FSExtension.h"
+#import "VLXMapTool.h"
+#import "PayTool.h"
+#import "NSString+HD.h"
+#import "KYLocalVideoPlayVC.h"
+#import "ShareTool.h"
+
+#import <BaiduMapAPI_Base/BMKBaseComponent.h>//引入base相关所有的头文件
+
+#import <BaiduMapAPI_Map/BMKMapComponent.h>//引入地图功能所有的头文件
+
+#import <BaiduMapAPI_Search/BMKSearchComponent.h>//引入检索功能所有的头文件
+
+#import <BaiduMapAPI_Cloud/BMKCloudSearchComponent.h>//引入云检索功能所有的头文件
+
+#import <BaiduMapAPI_Location/BMKLocationComponent.h>//引入定位功能所有的头文件
+
+#import <BaiduMapAPI_Utils/BMKUtilsComponent.h>//引入计算工具所有的头文件
+
+#import <BaiduMapAPI_Radar/BMKRadarComponent.h>//引入周边雷达功能所有的头文件
+
+#import <BaiduMapAPI_Map/BMKMapView.h>//只引入所需的单个头文件
+
+#endif
+
+
+#ifdef DEBUG
+#define MyLog(...) NSLog(__VA_ARGS__)
+#else
+#define MyLog(...)
+#endif
+
+#define ScreenSize [UIScreen mainScreen].bounds.size
+#define SCREEN_WIDTH     [[UIScreen mainScreen] bounds].size.width
+#define SCREEN_HEIGHT    [[UIScreen mainScreen] bounds].size.height
+
+#define kScreenWidth     [[UIScreen mainScreen] bounds].size.width
+#define kScreenHeight    [[UIScreen mainScreen] bounds].size.height
+
+#define ScaleWidth(value)   (((value)/375.0/1) * SCREEN_WIDTH)
+#define ScaleHeight(value)  (((value)/667.0/1) * SCREEN_HEIGHT)
+#define MinPhone (568 == [[UIScreen mainScreen] bounds].size.height ? YES : NO)
+#define MidPhone (667 == [[UIScreen mainScreen] bounds].size.height ? YES : NO)
+#define MaxPhone (736 == [[UIScreen mainScreen] bounds].size.height ? YES : NO)
+
+#define defaultMinImage [UIImage imageNamed:@""]
+#define defaultMaxImage [UIImage imageNamed:@""]
+#define defaultIcon [UIImage imageNamed:@"icon_morentouxiang"]
+#define defaultJianLi [UIImage imageNamed:@""]
+//update by yuanchaofan
+#define separatorColor1 [UIColor hexStringToColor:@"#dddddd"]
+#define backgroun_view_color [UIColor hexStringToColor:@"#f3f3f4"]
+#define orange_color [UIColor hexStringToColor:@"#ea5413"]
+#define red_color [UIColor hexStringToColor:@"#ffc9b1"]
+#define blue_color [UIColor hexStringToColor:@"#00baff"]
+#define green_color [UIColor hexStringToColor:@"#06f400"]
+#define gray_color [UIColor hexStringToColor:@"#dddddd"]
+
+#define ScreenWidth [[UIScreen mainScreen] bounds].size.width
+#define ScreenHeight [[UIScreen mainScreen] bounds].size.height
+#define pageSize 10
+#define ScreenSize [UIScreen mainScreen].bounds.size
+#define ScreenSizeWith [UIScreen mainScreen].bounds.size.width
+#define ScreenSizeHeight [UIScreen mainScreen].bounds.size.height
+//无网络图片
+#define ADNoDataImage  [UIImage imageNamed:@"nongjiayuan-banner"] //长图片(横着)
+#define smallNoDataImage [UIImage imageNamed:@"yingguo"] //小图片
+#define NoDataImage_V [UIImage imageNamed:@"denlgu-bg2"] //长图片(竖着)
+
+//
+//
+
+#ifndef weakify
+#if DEBUG
+#if __has_feature(objc_arc)
+#define weakify(object) autoreleasepool{} __weak __typeof__(object) weak##_##object = object;
+#else
+#define weakify(object) autoreleasepool{} __block __typeof__(object) block##_##object = object;
+#endif
+#else
+#if __has_feature(objc_arc)
+#define weakify(object) try{} @finally{} {} __weak __typeof__(object) weak##_##object = object;
+#else
+#define weakify(object) try{} @finally{} {} __block __typeof__(object) block##_##object = object;
+#endif
+#endif
+#endif
+
+#ifndef strongify
+#if DEBUG
+#if __has_feature(objc_arc)
+#define strongify(object) autoreleasepool{} __typeof__(object) object = weak##_##object;
+#else
+#define strongify(object) autoreleasepool{} __typeof__(object) object = block##_##object;
+#endif
+#else
+#if __has_feature(objc_arc)
+#define strongify(object) try{} @finally{} __typeof__(object) object = weak##_##object;
+#else
+#define strongify(object) try{} @finally{} __typeof__(object) object = block##_##object;
+#endif
+#endif
+#endif
+
+
+
+//#define ftpPath @"http://handongkeji.com:8090/lvyoushejiao"
+//#define ftpPath @"http://app.mtvlx.cn/lvyoushejiao"
+
+#define ftpPath @"http://app.mtvlx.cn/lvxing"
+
+//grm新增头文件
+#define rgba(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+
+
+
+//唐阳正式机票模块
+#define  tangyangURL @"http://app.mtvlx.cn/ticket/"         //注意,有斜杠
+//唐阳本地测试接口
+//#define tang_BENDIJIEKOU_URL @"http://192.168.1.113:9000/lvxing"
+
+#define tang_BENDIJIEKOU_URL @"http://app.mtvlx.cn/lvxing"       //注意,无斜杠
+
+//解决打印json不全的问题(这个问题只在xcode8,并且ios10真机下才会出现打印不全的情况)
+//#ifdef DEBUG //开发阶段
+#define NSLog_JSON(format,...) printf("%s",[[NSString stringWithFormat:(format), ##__VA_ARGS__] UTF8String])
+//#else //发布阶段
+//#define NSLog(...)
+
+//列表数据为空时候显示的界面
+#import "WFEmptyTableView.h"
+#import "UITableView+WFEmpty.h"
+
+
+#import "HMHttpTool.h"
+
+//适配iPhone X,
+#define K_SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+#define K_SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+// Constants
+#define K_PHONE_7P_SCREEN_WIDTH (414.0f)
+#define K_PHONE_7P_SCREEN_HEIGHT (736.0f)
+#define K_PHONE_6_SCREEN_WIDTH (375.0f)
+#define K_PHONE_6_SCREEN_HEIGHT (667.0f)
+#define K_PHONE_5_SCREEN_WIDTH (320.f)
+#define K_PHONE_5_SCREEN_HEIGHT (568.f)
+#define K_NAVIGATION_BAR_HEIGHT (44.f)
+
+
+#define kStatusBarHeight [[UIApplication sharedApplication] statusBarFrame].size.height//状态栏
+#define kNavBarHeight 44.0//导航栏
+#define kTabBarHeight ([[UIApplication sharedApplication] statusBarFrame].size.height>20?83:49)//tabbar
+#define kTopHeight (kStatusBarHeight + kNavBarHeight)//状态栏和导航栏
+#define kSafeAreaBottomHeight (K_SCREEN_HEIGHT == 812.0 ? 34 : 0)
+/// 高度系数 812.0 是iPhoneX的高度尺寸，667.0表示是iPhone 8 的高度，如果你觉的它会变化，那我也很无奈
+#define kHeightCoefficient (K_SCREEN_HEIGHT == 812.0 ? 667.0/667.0 : K_SCREEN_HEIGHT/667.0)
+// 是否是IPHONE_X机型
+#define IS_IPHONE_X (K_SCREEN_HEIGHT == 812)
+
+// Expressions
+#define isScreenWidthEqual320 (fabs([UIScreen mainScreen].bounds.size.width - 320.f) < DBL_EPSILON)
+#define isScreenWidthEqual375 (fabs([UIScreen mainScreen].bounds.size.width - 375.f) < DBL_EPSILON)
+#define isScreenWidthEqual414 (fabs([UIScreen mainScreen].bounds.size.width - 414.f) < DBL_EPSILON)
+#define isScreenHeightEqual480 (fabs([UIScreen mainScreen].bounds.size.height - 480.f) < DBL_EPSILON)
+// Macros With Parameter
+#define K_DEPENDED_SCREEN_WIDTH K_PHONE_7P_SCREEN_WIDTH
+#define K_DEPENDED_SCREEN_HEIGHT K_PHONE_7P_SCREEN_HEIGHT
+
+#define getWidth(w) ((float)w / K_DEPENDED_SCREEN_WIDTH * K_SCREEN_WIDTH)
+#define getHeight(h) ((float)h / K_DEPENDED_SCREEN_HEIGHT * K_SCREEN_HEIGHT)
+#define getPoint(x, y) (CGPointMake((getWidth(x), getHeight(y))))
+#define getRect(x, y, w, h) (CGRectMake(getWidth(x), getHeight(y), getWidth(w), getHeight(h)))
+#define getEdgeInsets(top, left, bottom, right) (UIEdgeInsetsMake(getHeight(top), getWidth(left), getHeight(bottom), getWidth(right)))
+
+#define getHeightKeepWHAspect(w, aspect) ((float)(w) / (float)(aspect))
+#define getHeightKeepWHAspectAndWidthEqualScreenW(h) ((float)h / K_DEPENDED_SCREEN_WIDTH * K_SCREEN_WIDTH)
+#define getSizeKeepWHAspect1(w, aspect) (CGSizeMake(getWidth(w), getWidth(w) / (float)(aspect)))
+#define getSizeKeepWHAspect2(w, h) getSizeKeepWHAspect1(w, (float)w / (float)h)
+
+#define getWidthWithWHAspect(h, aspect) ((float)h * (float)aspect)
+#define getSizeKeepHeightFitWholeScreen(w, h) (CGSizeMake(getWidthWithWHAspect(K_SCREEN_HEIGHT, (float)w / (float)h), K_SCREEN_HEIGHT))
+
+
+//星聚假接口,正式的需要删除或注释掉
+//上线
+#define BaseUrl @"http://xingju.mstring.cn/xingjuapp-front/" //正式 (上线版)
+//动态列表
+#define dynamic_listURL [NSString stringWithFormat:@"%@%@",BaseUrl,@"dynamic_list"]
+//动态收藏
+#define dynamic_collectionURL [NSString stringWithFormat:@"%@%@",BaseUrl,@"dynamic_collection"]
+//动态点赞
+#define dynamic_likeURL [NSString stringWithFormat:@"%@%@",BaseUrl,@"dynamic_like"]
+
+//假,借用xing聚
+
+#import "UIView+Extension.h"
+#import "UIImage+Extension.h"
+#import "UIView+Extension.h"
+#import "UIBarButtonItem+Extension.h"
+#import "NSString+Extension.h"
+
+#import "MBProgressHUD+MJ.h"
+
+#import "UIImageView+WebCache.h"
+//#import "ZTHConst.h"
+//#import "ConstUrl.h"
+//#import "Constant.h"
+
+
+
+
+
+#define UserName @"userName"
+#define PassWord @"password"
+#define iOSSwitch @"iosSwitch"
+// P判断时候4英尺
+#define FourInch (568.0 >= [UIScreen mainScreen].bounds.size.height)
+#define MainRedColor [UIColor colorWithRed:243/255.0 green:77/255.0 blue:66/255.0 alpha:1];//主题红色
+
+//用户信息存档
+#define AccountFilePath [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject] stringByAppendingPathComponent:@"user.arch"]
+
+
+// 颜色
+#define HMColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define HMColorAlpha(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+
+// 随机色
+#define HMRandomColor HMColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+
+// 全局背景色
+#define HMGlobalBg HMColor(241, 241, 241)
+
+
+//仅支持 @“0X123456”这种格式,,,,,,,不支持@“#123456”,@“123456”格式
+#define grmUIColorFrom16RGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+// 是否为iOS7
+#define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
+
+// 是否为4inch
+#define FourInch ([UIScreen mainScreen].bounds.size.height == 568.0)
+
+// 导航栏标题的字体
+#define HMNavigationTitleFont [UIFont boldSystemFontOfSize:18]
+
+//// 应用信息
+//#define HMAppKey @"3141202626"
+//#define HMAppSecret @"ee9de4d2431be061b22fe328332a5228"
+//#define HMRedirectURI @"http://www.itheima.com"
+
+
+
+// cell之间的间距
+#define HMStatusCellMargin 10
+
+// cell的内边距
+#define HMStatusCellInset 10
+
+#define HMFUNC HMLog(@"%s",__func__)
+
+// 原创微博昵称字体
+#define HMStatusOrginalNameFont [UIFont systemFontOfSize:16]
+// 原创微博时间字体
+#define HMStatusOrginalTimeFont [UIFont systemFontOfSize:15]//
+// 原创微博来源字体
+#define HMStatusOrginalSourceFont HMStatusOrginalTimeFont
+// 原创微博正文字体
+#define HMStatusOrginalTextFont [UIFont systemFontOfSize:18]
+// 富文本字体
+#define HMStatusRichTextFont  [UIFont systemFontOfSize:15]
+
+// 转发微博昵称字体
+#define HMStatusRetweetedNameFont HMStatusOrginalNameFont
+// 转发微博正文字体
+#define HMStatusRetweetedTextFont HMStatusOrginalTextFont
+
+
+// 转发微博正文字体
+#define HMStatusHighTextColor HMColor(88, 161, 253)
+
+/** 表情相关 */
+// 表情的最大行数
+#define HMEmotionMaxRows 3
+// 表情的最大列数
+#define HMEmotionMaxCols 7
+// 每页最多显示多少个表情
+#define HMEmotionMaxCountPerPage (HMEmotionMaxRows * HMEmotionMaxCols - 1)
+
+// 通知
+// 表情选中的通知
+#define HMEmotionDidSelectedNotification @"HMEmotionDidSelectedNotification"
+// 点击删除按钮的通知
+#define HMEmotionDidDeletedNotification @"HMEmotionDidDeletedNotification"
+// 通知里面取出表情用的key
+#define HMSelectedEmotion @"HMSelectedEmotion"
+
+// 链接选中的通知
+#define HMLinkDidSelectedNotification @"HMLinkDidSelectedNotification"
+
+// 富文本里面出现的链接
+#define HMLinkText @"HMLinkText"
+
+
+
+
+
+

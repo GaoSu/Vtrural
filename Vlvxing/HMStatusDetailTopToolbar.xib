@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="0cv-Id-HQF" customClass="HMStatusDetailTopToolbar">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fj8-yK-7sI">
+                    <rect key="frame" x="0.0" y="10" width="83" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="Yuz-bU-koo"/>
+                        <constraint firstAttribute="width" constant="83" id="ZFf-e9-elW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="1009 详情">
+                        <color key="titleColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="selected">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFy-2L-LK5">
+                    <rect key="frame" x="118.5" y="10" width="83" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="MgO-GZ-7iZ"/>
+                        <constraint firstAttribute="width" constant="83" id="hJy-ZV-84E"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="1009 评论">
+                        <color key="titleColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="selected">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonClick:" destination="0cv-Id-HQF" eventType="touchUpInside" id="kw8-fy-XZn"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aT2-5a-8qU">
+                    <rect key="frame" x="237" y="10" width="83" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="83" id="Pjg-Xi-s4m"/>
+                        <constraint firstAttribute="height" constant="35" id="jC1-fk-B7Z"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="1009 赞">
+                        <color key="titleColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="selected">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonClick:" destination="0cv-Id-HQF" eventType="touchUpInside" id="ESZ-4y-ygv"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="statusdetail_comment_line" translatesAutoresizingMaskIntoConstraints="NO" id="K9U-L8-18H" userLabel="分割线">
+                    <rect key="frame" x="83" y="18" width="1" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Slide" translatesAutoresizingMaskIntoConstraints="NO" id="iqE-iD-Bnr" userLabel="底部滑动线条">
+                    <rect key="frame" x="124" y="42" width="73" height="3"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="73" id="9Nf-XM-KxY"/>
+                        <constraint firstAttribute="height" constant="3" id="VrD-p9-0d8"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="iqE-iD-Bnr" secondAttribute="bottom" id="1wT-Ms-mmw"/>
+                <constraint firstItem="fj8-yK-7sI" firstAttribute="top" secondItem="0cv-Id-HQF" secondAttribute="top" constant="10" id="DSO-P1-Yki"/>
+                <constraint firstItem="MFy-2L-LK5" firstAttribute="centerX" secondItem="0cv-Id-HQF" secondAttribute="centerX" id="EQ6-vx-0SA"/>
+                <constraint firstItem="aT2-5a-8qU" firstAttribute="top" secondItem="0cv-Id-HQF" secondAttribute="top" constant="10" id="Na5-gw-iyL"/>
+                <constraint firstItem="fj8-yK-7sI" firstAttribute="leading" secondItem="0cv-Id-HQF" secondAttribute="leading" id="Ww1-BW-Noq"/>
+                <constraint firstAttribute="bottom" secondItem="MFy-2L-LK5" secondAttribute="bottom" id="dH5-HH-JQT"/>
+                <constraint firstAttribute="trailing" secondItem="aT2-5a-8qU" secondAttribute="trailing" id="hwq-cs-5PZ"/>
+                <constraint firstItem="iqE-iD-Bnr" firstAttribute="centerX" secondItem="MFy-2L-LK5" secondAttribute="centerX" id="rtZ-KZ-aqO"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="arrowView" destination="iqE-iD-Bnr" id="XAy-Q1-PvD"/>
+                <outlet property="attitudeButton" destination="aT2-5a-8qU" id="H9J-ne-JXF"/>
+                <outlet property="bottomLine" destination="rtZ-KZ-aqO" id="KuT-AN-F9h"/>
+                <outlet property="commentButton" destination="MFy-2L-LK5" id="KLr-dR-RY8"/>
+                <outlet property="retweetedButton" destination="fj8-yK-7sI" id="NT8-bt-xKJ"/>
+            </connections>
+            <point key="canvasLocation" x="-254" y="103"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Slide" width="73" height="2"/>
+        <image name="statusdetail_comment_line" width="1" height="15"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
+</document>
